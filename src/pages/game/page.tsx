@@ -1,0 +1,28 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import { GameFull } from "../../types/interface";
+import { getGame } from "../../utils/apiCalls";
+
+import "./page.css";
+
+export default function GamePage() {
+  const [game, setGame] = useState<GameFull>();
+  const { id } = useParams();
+
+  useEffect(() => {
+    getGame(id).then(setGame);
+  }, []);
+
+  if (!game) return <div>Loading</div>;
+
+  return (
+    <>
+      <div className="image-container">
+        <img src={game.screenshots[0].image} alt={game.title} />
+      </div>
+
+      <div>{game.title}</div>
+      <div>{game.description}</div>
+    </>
+  );
+}
