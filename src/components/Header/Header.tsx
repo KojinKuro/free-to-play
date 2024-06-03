@@ -7,10 +7,10 @@ export default function Header() {
   return (
     <header>
       <Link to="/">FREEtoPLAY DB</Link>
-      <div>
+      <section className="header-links">
         <SearchBar />
         <HeaderRandom />
-      </div>
+      </section>
     </header>
   );
 }

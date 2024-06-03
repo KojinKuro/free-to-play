@@ -2,4 +2,10 @@ header {
   background-color: red;
   display: flex;
   justify-content: space-between;
+  padding: 20px;
+}
+
+.header-links {
+  display: flex;
+  gap: 10px;
 }

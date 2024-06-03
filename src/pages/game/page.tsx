@@ -6,12 +6,12 @@ import { getGame } from "../../utils/apiCalls";
 import "./page.css";
 
 export default function GamePage() {
-  const [game, setGame] = useState<GameFull>();
   const { id } = useParams();
+  const [game, setGame] = useState<GameFull>();
 
   useEffect(() => {
     getGame(id).then(setGame);
-  }, []);
+  }, [id]);
 
   if (!game) return <div>Loading</div>;
 
