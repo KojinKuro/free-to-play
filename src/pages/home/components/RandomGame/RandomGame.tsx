@@ -44,20 +44,22 @@ export default function RandomGame() {
         {calculateGameImages(games.slice(0, 5))}
       </Marquee>
       <h1>Free to play Database</h1>
-      <form>
+      <form className="random-game-form">
         <button onClick={handleButton}>Get a random game</button>
-        <CategorySelect
-          category="Genre"
-          categoryData={genres}
-          categoryInput={genreInput}
-          setCategoryInput={setGenreInput}
-        />
-        <CategorySelect
-          category="Platform"
-          categoryData={platforms}
-          categoryInput={platformInput}
-          setCategoryInput={setPlatformInput}
-        />
+        <div>
+          <CategorySelect
+            category="Genre"
+            categoryData={genres}
+            categoryInput={genreInput}
+            setCategoryInput={setGenreInput}
+          />
+          <CategorySelect
+            category="Platform"
+            categoryData={platforms}
+            categoryInput={platformInput}
+            setCategoryInput={setPlatformInput}
+          />
+        </div>
       </form>
       <Marquee autoFill={true} direction="right">
         {calculateGameImages(games.slice(5, 10))}

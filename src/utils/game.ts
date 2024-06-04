@@ -33,9 +33,9 @@ export function sortGamesByDate(games: Game[]) {
   );
 }
 
-export function sorGamesByAlphabetic(games: Game[]) {
+export function sortGamesByAlphabetic(games: Game[]) {
   return games.toSorted((game1, game2) =>
-    game2.title.localeCompare(game1.title)
+    game1.title.localeCompare(game2.title)
   );
 }
 
