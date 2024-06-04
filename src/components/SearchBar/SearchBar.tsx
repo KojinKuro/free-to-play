@@ -6,7 +6,7 @@ import "./SearchBar.css";
 import { SearchResult } from "./SearchResult";
 
 export default function SearchBar() {
-  const games = useContext(GameContext);
+  const { games } = useContext(GameContext);
   const [searchInput, setSearchInput] = useState("");
   const navigate = useNavigate();
 

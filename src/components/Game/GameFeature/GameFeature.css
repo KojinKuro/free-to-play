@@ -1,0 +1,5 @@
+.game-feature-card {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  width: 1000px;
+}

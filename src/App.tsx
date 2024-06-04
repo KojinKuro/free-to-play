@@ -9,19 +9,30 @@ import GamePage from "./pages/game/page.tsx";
 import HomePage from "./pages/home/page.tsx";
 import { Game } from "./types/interface.ts";
 import { getGames } from "./utils/apiCalls.ts";
+import { calculateCategory } from "./utils/game.ts";
 
-export const GameContext = createContext<Game[]>([]);
+export const GameContext = createContext<{
+  games: Game[];
+  genres: string[];
+  platforms: string[];
+}>({ games: [], genres: [], platforms: [] });
 
 function App() {
   const [games, setGames] = useState<Game[]>([]);
+  const [genres, setGenres] = useState<string[]>([]);
+  const [platforms, setPlatforms] = useState<string[]>([]);
 
   useEffect(() => {
-    getGames().then((data) => setGames(data));
+    getGames().then((data): void => {
+      setGames(data);
+      setGenres(calculateCategory("genre", data));
+      setPlatforms(calculateCategory("platform", data));
+    });
   }, []);
 
   return (
     <>
-      <GameContext.Provider value={games}>
+      <GameContext.Provider value={{ games, genres, platforms }}>
         <Header />
         <main>
           <Routes>

@@ -5,7 +5,7 @@ import { getRandomGame } from "../../utils/game";
 import "./HeaderRandom.css";
 
 export default function HeaderRandom() {
-  const games = useContext(GameContext);
+  const { games } = useContext(GameContext);
   const navigate = useNavigate();
 
   const handleButton = (e: SyntheticEvent) => {

@@ -2,8 +2,18 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  --main-clr: pink;
 }
 
 main {
   flex: 1;
+}
+
+.image-container {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
