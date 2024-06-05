@@ -1,0 +1,19 @@
+.game-list-card {
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  width: 1000px;
+
+  .image-container {
+    width: 100%;
+  }
+}
+
+.game-list-container {
+  display: flex;
+  height: 100%;
+
+  .game-list-preview {
+    width: 200px;
+    background-color: red;
+  }
+}

@@ -1,0 +1,23 @@
+.search-bar-root {
+  display: flex;
+}
+
+.search-bar-container {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  .search-results-container {
+    position: absolute;
+    top: 44px;
+    width: 100%;
+
+    z-index: 2;
+  }
+}
+
+.search-input-container {
+  display: flex;
+  flex-direction: column;
+}

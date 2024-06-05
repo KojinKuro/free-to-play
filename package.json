@@ -10,8 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "fuzzysort": "^3.0.1",
+    "normalize.css": "^8.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-fast-marquee": "^1.6.4",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-multi-carousel": "^2.8.5",
+    "react-router": "^6.23.1",
+    "react-router-dom": "^6.23.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
@@ -20,6 +27,7 @@
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "typescript": "^5.2.2",

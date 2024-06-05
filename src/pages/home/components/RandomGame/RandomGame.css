@@ -1,0 +1,14 @@
+.random-game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.random-game-form {
+  display: flex;
+  flex-direction: column;
+
+  button {
+    height: 50px;
+  }
+}

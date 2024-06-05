@@ -1,33 +1,49 @@
-import { useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { Route, Routes } from "react-router";
 import "./App.css";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import Footer from "./components/Footer/Footer.tsx";
+import Header from "./components/Header/Header.tsx";
+import DataPage from "./pages/database/page.tsx";
+import ErrorPage from "./pages/error/page.tsx";
+import GamePage from "./pages/game/page.tsx";
+import HomePage from "./pages/home/page.tsx";
+import { Game } from "./types/interface.ts";
+import { getGames } from "./utils/apiCalls.ts";
+import { calculateCategory } from "./utils/game.ts";
+
+export const GameContext = createContext<{
+  games: Game[];
+  genres: string[];
+  platforms: string[];
+}>({ games: [], genres: [], platforms: [] });
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [games, setGames] = useState<Game[]>([]);
+  const [genres, setGenres] = useState<string[]>([]);
+  const [platforms, setPlatforms] = useState<string[]>([]);
+
+  useEffect(() => {
+    getGames().then((data): void => {
+      setGames(data);
+      setGenres(calculateCategory("genre", data));
+      setPlatforms(calculateCategory("platform", data));
+    });
+  }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <GameContext.Provider value={{ games, genres, platforms }}>
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/database" element={<DataPage />} />
+            <Route path="/game/:id" element={<GamePage />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </GameContext.Provider>
     </>
   );
 }
