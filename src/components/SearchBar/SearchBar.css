@@ -1,12 +1,14 @@
 .search-bar-root {
   display: flex;
+  flex: 1;
 }
 
 .search-bar-container {
   display: flex;
   flex-direction: column;
-
   position: relative;
+
+  width: 100%;
 
   .search-results-container {
     position: absolute;
@@ -20,4 +22,5 @@
 .search-input-container {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }

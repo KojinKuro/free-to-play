@@ -1,5 +1,28 @@
+.game-feature--carousel-item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px 0;
+}
+
 .game-feature-card {
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  width: 1000px;
+  grid-template-columns: 3fr 2fr;
+  max-width: 1000px;
+  width: 100%;
+
+  background-color: var(--main-bg-clr);
+
+  cursor: pointer;
+
+  .game-feature-card--info {
+    padding: 10px;
+  }
+
+  .game-feature-title {
+    margin: 0;
+    text-transform: uppercase;
+  }
 }

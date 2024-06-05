@@ -35,12 +35,14 @@ function App() {
       <GameContext.Provider value={{ games, genres, platforms }}>
         <Header />
         <main>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/database" element={<DataPage />} />
-            <Route path="/game/:id" element={<GamePage />} />
-            <Route path="*" element={<ErrorPage />} />
-          </Routes>
+          <div className="main-content">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/database" element={<DataPage />} />
+              <Route path="/game/:id" element={<GamePage />} />
+              <Route path="*" element={<ErrorPage />} />
+            </Routes>
+          </div>
         </main>
         <Footer />
       </GameContext.Provider>

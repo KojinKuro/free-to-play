@@ -1,0 +1,27 @@
+.game-list-card {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+
+  background-color: var(--main-bg-clr);
+  margin-bottom: 20px;
+
+  .image-container {
+    width: 100%;
+  }
+}
+
+.game-list-info {
+  padding: 10px;
+}
+
+.game-list--buttons {
+  position: absolute;
+  bottom: -10px;
+  right: 10px;
+
+  & > * {
+    margin-right: 10px;
+  }
+}

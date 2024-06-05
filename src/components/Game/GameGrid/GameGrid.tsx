@@ -32,8 +32,13 @@ export default function GameGrid({ games }: { games: Game[] }) {
           key={game.id}
           onClick={() => navigate(`/game/${game.id}`)}
         >
-          <img src={game.thumbnail} alt={game.title} />
-          <div>{game.title}</div>
+          <div className="image-container">
+            <img src={game.thumbnail} alt={game.title} />
+          </div>
+          <div className="game-grid-card--info">
+            <div>{game.platform}</div>
+            <div>{game.short_description}</div>
+          </div>
         </div>
       ))}
     </InfiniteScroll>
