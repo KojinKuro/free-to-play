@@ -9,11 +9,31 @@
 
   .image-container {
     width: 100%;
+    cursor: pointer;
+
+    img {
+      transition: transform 0.25s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
   }
 }
 
 .game-list-info {
   padding: 10px;
+}
+
+.game-list--title {
+  margin: 0 0 20px;
+}
+
+.game-list--info-details {
+  display: flex;
+}
+
+.game-list--genre {
 }
 
 .game-list--buttons {

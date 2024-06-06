@@ -1,18 +1,27 @@
 import { Link } from "react-router-dom";
 import { Game, GameFull } from "../../../types/interface";
+import GamePlatforms from "../GamePlatforms/GamePlatforms";
 import "./GameListCard.css";
 
-export default function GameListCard({ game }: { game: Game | GameFull }) {
+export default function GameListCard({
+  game,
+  className = "",
+}: {
+  game: Game | GameFull;
+  className?: string;
+}) {
   return (
-    <div className="game-list-card">
-      <div className="image-container">
+    <div className={"game-list-card " + className}>
+      <Link to={`/game/${game.id}`} className="image-container">
         <img src={game.thumbnail} alt={game.title} />
-      </div>
+      </Link>
       <div className="game-list-info">
-        <h1>{game.title}</h1>
-        <div>{game.platform}</div>
+        <h1 className="game-list--title">{game.title}</h1>
+        <div className="game-list--info-details">
+          <GamePlatforms string={game.platform} />
+          <div className="game-list--genre">{game.genre}</div>
+        </div>
         <div>{game.short_description}</div>
-        <div>{game.genre}</div>
       </div>
       <div className="game-list--buttons">
         <Link to={`/game/${game.id}`}>

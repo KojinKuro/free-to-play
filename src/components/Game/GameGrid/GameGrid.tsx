@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useNavigate } from "react-router";
 import { Game } from "../../../types/interface";
+import GamePlatforms from "../GamePlatforms/GamePlatforms";
 import "./GameGrid.css";
 
 export default function GameGrid({ games }: { games: Game[] }) {
@@ -28,7 +29,7 @@ export default function GameGrid({ games }: { games: Game[] }) {
     >
       {gamesToDisplay.map((game) => (
         <div
-          className="game-grid-card"
+          className="game-grid-card hover-zoom"
           key={game.id}
           onClick={() => navigate(`/game/${game.id}`)}
         >
@@ -36,7 +37,7 @@ export default function GameGrid({ games }: { games: Game[] }) {
             <img src={game.thumbnail} alt={game.title} />
           </div>
           <div className="game-grid-card--info">
-            <div>{game.platform}</div>
+            <GamePlatforms string={game.platform} />
             <div>{game.short_description}</div>
           </div>
         </div>

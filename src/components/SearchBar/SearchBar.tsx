@@ -1,7 +1,7 @@
 import fuzzysort from "fuzzysort";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
-import { GameContext } from "../../App";
+import { GameContext } from "../App/App";
 import "./SearchBar.css";
 import { SearchResult } from "./SearchResult";
 

@@ -1,16 +1,16 @@
 import { createContext, useEffect, useState } from "react";
 import { Route, Routes } from "react-router";
+import DataPage from "../../pages/database/page.tsx";
+import ErrorPage from "../../pages/error/page.tsx";
+import GamePage from "../../pages/game/page.tsx";
+import HomePage from "../../pages/home/page.tsx";
+import { Game } from "../../types/interface.ts";
+import { getGames } from "../../utils/apiCalls.ts";
+import { calculateCategory } from "../../utils/game.ts";
+import Footer from "../Footer/Footer.tsx";
+import Header from "../Header/Header.tsx";
+import Nav from "../Nav/Nav.tsx";
 import "./App.css";
-import Footer from "./components/Footer/Footer.tsx";
-import Header from "./components/Header/Header.tsx";
-import Nav from "./components/Nav/Nav.tsx";
-import DataPage from "./pages/database/page.tsx";
-import ErrorPage from "./pages/error/page.tsx";
-import GamePage from "./pages/game/page.tsx";
-import HomePage from "./pages/home/page.tsx";
-import { Game } from "./types/interface.ts";
-import { getGames } from "./utils/apiCalls.ts";
-import { calculateCategory } from "./utils/game.ts";
 
 export const GameContext = createContext<{
   games: Game[];

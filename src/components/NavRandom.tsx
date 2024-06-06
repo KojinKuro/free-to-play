@@ -1,7 +1,7 @@
 import { SyntheticEvent, useContext } from "react";
 import { useNavigate } from "react-router";
-import { GameContext } from "../App";
 import { getRandomGame } from "../utils/game";
+import { GameContext } from "./App/App";
 
 export default function NavRandom() {
   const { games } = useContext(GameContext);

@@ -6,16 +6,19 @@ export function CategorySelect({
   categoryData,
   categoryInput,
   setCategoryInput,
+  id = "",
 }: {
   category: string;
   categoryData: string[];
   categoryInput: string;
   setCategoryInput: Dispatch<SetStateAction<string>>;
+  id?: string;
 }) {
   return (
     <select
       value={categoryInput}
       onChange={(e) => setCategoryInput(e.target.value)}
+      id={id !== "" ? id : undefined}
     >
       <option disabled value="">
         {category}

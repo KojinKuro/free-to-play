@@ -6,6 +6,7 @@ import "./Nav.css";
 export default function Nav() {
   return (
     <nav>
+      <Link to="/">HOME</Link>
       <Link to="/database">ALL GAMES</Link>
       <section className="nav-tools">
         <SearchBar />

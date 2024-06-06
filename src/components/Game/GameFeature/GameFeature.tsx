@@ -1,6 +1,7 @@
 import Carousel from "react-multi-carousel";
 import { useNavigate } from "react-router";
 import { Game } from "../../../types/interface";
+import GamePlatforms from "../GamePlatforms/GamePlatforms";
 import "./GameFeature.css";
 
 export default function GameFeature({ games }: { games: Game[] }) {
@@ -33,6 +34,7 @@ export default function GameFeature({ games }: { games: Game[] }) {
           <div className="game-feature-card--info">
             <h1 className="game-feature-title">{game.title}</h1>
             <div>{game.short_description}</div>
+            <GamePlatforms string={game.platform} />
           </div>
         </div>
       ))}

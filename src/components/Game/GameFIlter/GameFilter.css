@@ -1,7 +1,6 @@
-.game-filter {
+.game-filter-container {
   background-color: var(--main-bg-clr);
   padding: 20px;
-  width: 100%;
 
   display: flex;
   justify-content: space-evenly;

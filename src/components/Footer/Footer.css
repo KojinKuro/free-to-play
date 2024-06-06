@@ -18,9 +18,13 @@ footer {
 }
 
 .footer--about {
-  width: 500px;
+  width: 425px;
 
   * {
     margin: 0;
+  }
+
+  *:first-child {
+    margin-bottom: 50px;
   }
 }

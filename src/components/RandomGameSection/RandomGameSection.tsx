@@ -1,13 +1,13 @@
 import { SyntheticEvent, useContext, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { useNavigate } from "react-router";
-import { GameContext } from "../../App";
 import { Game } from "../../types/interface";
 import { filterGames, getRandomGame } from "../../utils/game";
+import { GameContext } from "../App/App";
 import { CategorySelect } from "../CategorySelect/CategorySelect";
-import "./RandomGame.css";
+import "./RandomGameSection.css";
 
-export default function RandomGame() {
+export default function RandomGameSection() {
   const { games, genres, platforms } = useContext(GameContext);
   const [genreInput, setGenreInput] = useState<string>("");
   const [platformInput, setPlatformInput] = useState<string>("");
@@ -39,7 +39,10 @@ export default function RandomGame() {
   };
 
   return (
-    <div className="random-game-container">
+    <div
+      className="random-game-container"
+      style={{ backgroundImage: `url(${games[0]?.thumbnail})` }}
+    >
       <div className="random-game-marquee-container">
         <Marquee autoFill={true} direction="left">
           {calculateMarqueeImages(games.slice(0, 10))}
