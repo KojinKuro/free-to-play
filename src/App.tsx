@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router";
 import "./App.css";
 import Footer from "./components/Footer/Footer.tsx";
 import Header from "./components/Header/Header.tsx";
+import Nav from "./components/Nav/Nav.tsx";
 import DataPage from "./pages/database/page.tsx";
 import ErrorPage from "./pages/error/page.tsx";
 import GamePage from "./pages/game/page.tsx";
@@ -34,6 +35,7 @@ function App() {
     <>
       <GameContext.Provider value={{ games, genres, platforms }}>
         <Header />
+        <Nav />
         <main>
           <div className="main-content">
             <Routes>

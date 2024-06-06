@@ -23,10 +23,7 @@ export default function GamePage() {
 
   return (
     <>
-      <div
-        className="image-container"
-        style={{ width: "100%", height: "600px" }}
-      >
+      <div className="image-container game-splash">
         <img
           src={game.screenshots[0]?.image || game.thumbnail}
           alt={game.title}
@@ -34,21 +31,20 @@ export default function GamePage() {
       </div>
       <div className="game-content-container">
         <div className="game-content">
-          <div>
-            <h1>{game.title}</h1>
-            <Link to={game.game_url}>
-              <button>PLAY GAME</button>
-            </Link>
-          </div>
+          <h1>{game.title}</h1>
           <div className="game-info-container">
-            <div>{game.description}</div>
-            <div>
+            <div style={{ whiteSpace: "pre-wrap" }}>{game.description}</div>
+            <section className="game-details">
               <div>Genre: {game.genre}</div>
               <div>Platform: {game.platform}</div>
               <div>Publisher: {game.publisher}</div>
               <div>Developer: {game.developer}</div>
               <div>Release Date: {game.release_date}</div>
-            </div>
+
+              <Link to={game.game_url}>
+                <button>PLAY GAME</button>
+              </Link>
+            </section>
           </div>
           {game.screenshots.length > 0 && (
             <GameScreenshots screenshots={game.screenshots} />

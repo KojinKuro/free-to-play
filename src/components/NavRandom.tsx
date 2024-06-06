@@ -1,10 +1,9 @@
 import { SyntheticEvent, useContext } from "react";
 import { useNavigate } from "react-router";
-import { GameContext } from "../../App";
-import { getRandomGame } from "../../utils/game";
-import "./HeaderRandom.css";
+import { GameContext } from "../App";
+import { getRandomGame } from "../utils/game";
 
-export default function HeaderRandom() {
+export default function NavRandom() {
   const { games } = useContext(GameContext);
   const navigate = useNavigate();
 

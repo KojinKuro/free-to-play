@@ -5,7 +5,7 @@ import { Game } from "../../../types/interface";
 import "./GameGrid.css";
 
 export default function GameGrid({ games }: { games: Game[] }) {
-  const [gamesToDisplay, setGamesToDisplay] = useState(games.slice(0, 12));
+  const [gamesToDisplay, setGamesToDisplay] = useState(games.slice(0, 24));
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export default function GameGrid({ games }: { games: Game[] }) {
 
   const getMoreGames = () => {
     setGamesToDisplay((prevGamesToDisplay) =>
-      games.slice(0, prevGamesToDisplay.length + 12)
+      games.slice(0, prevGamesToDisplay.length + 24)
     );
   };
 

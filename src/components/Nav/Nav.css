@@ -1,0 +1,20 @@
+nav {
+  display: flex;
+
+  background-color: var(--main-bg-clr);
+
+  padding: 10px;
+
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+
+  .nav-tools {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+
+    flex: 1;
+    max-width: 600px;
+  }
+}
