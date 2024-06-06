@@ -10,6 +10,7 @@ import { calculateCategory } from "../../utils/game.ts";
 import Footer from "../Footer/Footer.tsx";
 import Header from "../Header/Header.tsx";
 import Nav from "../Nav/Nav.tsx";
+import ScrollToTop from "../ScrollToTop.ts";
 import "./App.css";
 
 export const GameContext = createContext<{
@@ -47,6 +48,7 @@ function App() {
           </div>
         </main>
         <Footer />
+        <ScrollToTop />
       </GameContext.Provider>
     </>
   );

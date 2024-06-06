@@ -20,57 +20,70 @@ export default function GamePage() {
     getGame(id).then(setGame);
   }, [id]);
 
-  if (!game) return <div>Loading</div>;
-
   return (
     <>
       <div className="image-container game-splash">
-        <img
-          src={game.screenshots[1]?.image || game.thumbnail}
-          alt={game.title}
-        />
+        {game ? (
+          <img
+            src={game.screenshots[1].image || game.thumbnail}
+            alt={game.title}
+          />
+        ) : (
+          <Skeleton height={"100%"} />
+        )}
       </div>
       <div className="game-content-container">
         <div className="game-content">
-          <h1>{game.title}</h1>
+          <h1>{game?.title || <Skeleton width={500} />}</h1>
           <div className="game-info-container">
-            <div style={{ whiteSpace: "pre-wrap" }}>{game.description}</div>
+            <div style={{ whiteSpace: "pre-wrap" }}>
+              {game?.description || <Skeleton count={10} />}
+            </div>
             <div>
               <section className="game-details">
                 <table>
                   <tr>
                     <td>Genre:</td>
-                    <td>{game.genre}</td>
+                    <td>{game?.genre || <Skeleton width={200} />}</td>
                   </tr>
                   <tr>
                     <td>Platform:</td>
-                    <td>{game.platform}</td>
+                    <td>{game?.platform || <Skeleton width={200} />}</td>
                   </tr>
                   <tr>
                     <td>Publisher:</td>
-                    <td>{game.publisher}</td>
+                    <td>{game?.publisher || <Skeleton width={200} />}</td>
                   </tr>
                   <tr>
                     <td>Developer:</td>
-                    <td>{game.developer}</td>
+                    <td>{game?.developer || <Skeleton width={200} />}</td>
                   </tr>
                   <tr>
                     <td>Release Date:</td>
-                    <td>{game.release_date}</td>
+                    <td>{game?.release_date || <Skeleton width={200} />}</td>
                   </tr>
                 </table>
-                <Link className="game-details--button" to={game.game_url}>
+                <Link
+                  className="game-details--button"
+                  to={game ? game.game_url : "/"}
+                >
                   <button>PLAY GAME</button>
                 </Link>
               </section>
             </div>
           </div>
-          {game.screenshots.length > 0 && (
-            <GameScreenshots screenshots={game.screenshots} />
+          {game && (
+            <>
+              {game.screenshots.length > 0 && (
+                <GameScreenshots screenshots={game.screenshots} />
+              )}
+              {game?.minimum_system_requirements && (
+                <GameRequirements game={game} />
+              )}
+              <h1>Games Like {game?.title}</h1>
+              <GameDisplay games={getRelevantGames(game, games)} />
+            </>
           )}
-          {game.minimum_system_requirements && <GameRequirements game={game} />}
-          <h1>Games Like {game.title}</h1>
-          <GameDisplay games={getRelevantGames(game, games)} />
         </div>
       </div>
     </>
