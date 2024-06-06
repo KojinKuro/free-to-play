@@ -25,7 +25,7 @@ export default function GamePage() {
       <div className="image-container game-splash">
         {game ? (
           <img
-            src={game.screenshots[1].image || game.thumbnail}
+            src={game.screenshots[1]?.image || game.thumbnail}
             alt={game.title}
           />
         ) : (
@@ -77,11 +77,15 @@ export default function GamePage() {
               {game.screenshots.length > 0 && (
                 <GameScreenshots screenshots={game.screenshots} />
               )}
-              {game?.minimum_system_requirements && (
+              {game.minimum_system_requirements && (
                 <GameRequirements game={game} />
               )}
-              <h1>Games Like {game?.title}</h1>
-              <GameDisplay games={getRelevantGames(game, games)} />
+              {getRelevantGames(game, games).length > 0 && (
+                <>
+                  <h1>Games Like {game.title}</h1>
+                  <GameDisplay games={getRelevantGames(game, games)} />
+                </>
+              )}
             </>
           )}
         </div>
