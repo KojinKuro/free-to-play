@@ -2,6 +2,7 @@
   --main-bg-clr: rgb(178, 56, 182);
   --secondary-bg-clr: white;
   --card-bg-clr: rgb(238, 176, 240);
+  --feature-bg-clr: rgb(120, 20, 123);
   --bg-clr-light: rgba(238, 176, 240, 0.5);
   --bg-clr-lighter: rgba(253, 197, 255, 0.25);
 
@@ -26,6 +27,7 @@ body {
 }
 
 main {
+  position: relative;
   flex: 1;
 }
 
@@ -44,4 +46,9 @@ main {
   &:hover {
     transform: scale(1.05);
   }
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

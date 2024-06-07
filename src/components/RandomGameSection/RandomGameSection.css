@@ -13,7 +13,7 @@
   /* backgroundImage: this is include in the component */
   background-size: cover;
   background-blend-mode: luminosity;
-  background-color: color-mix(in srgb, black 50%, var(--main-bg-clr));
+  background-color: color-mix(in srgb, black 75%, var(--main-bg-clr));
 }
 
 .random-game-marquee-container {
@@ -32,7 +32,7 @@
 }
 
 .random-game--content {
-  background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.89);
   backdrop-filter: blur(5px);
   max-width: 500px;
 

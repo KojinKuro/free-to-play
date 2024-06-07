@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import { useErrorBoundary } from "react-error-boundary";
 import Skeleton from "react-loading-skeleton";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
@@ -15,9 +16,10 @@ export default function GamePage() {
   const { games } = useContext(GameContext);
   const { id } = useParams();
   const [game, setGame] = useState<GameFull>();
+  const { showBoundary } = useErrorBoundary();
 
   useEffect(() => {
-    getGame(id).then(setGame);
+    getGame(id).then(setGame).catch(showBoundary);
   }, [id]);
 
   return (
@@ -41,28 +43,26 @@ export default function GamePage() {
             </div>
             <div>
               <section className="game-details">
-                <table>
-                  <tr>
-                    <td>Genre:</td>
-                    <td>{game?.genre || <Skeleton width={200} />}</td>
-                  </tr>
-                  <tr>
-                    <td>Platform:</td>
-                    <td>{game?.platform || <Skeleton width={200} />}</td>
-                  </tr>
-                  <tr>
-                    <td>Publisher:</td>
-                    <td>{game?.publisher || <Skeleton width={200} />}</td>
-                  </tr>
-                  <tr>
-                    <td>Developer:</td>
-                    <td>{game?.developer || <Skeleton width={200} />}</td>
-                  </tr>
-                  <tr>
-                    <td>Release Date:</td>
-                    <td>{game?.release_date || <Skeleton width={200} />}</td>
-                  </tr>
-                </table>
+                <div className="game-detail--section">
+                  <div>Genre:</div>
+                  <div>{game?.genre || <Skeleton width={200} />}</div>
+                </div>
+                <div className="game-detail--section">
+                  <div>Platform:</div>
+                  <div>{game?.platform || <Skeleton width={200} />}</div>
+                </div>
+                <div className="game-detail--section">
+                  <div>Publisher:</div>
+                  <div>{game?.publisher || <Skeleton width={200} />}</div>
+                </div>
+                <div className="game-detail--section">
+                  <div>Developer:</div>
+                  <div>{game?.developer || <Skeleton width={200} />}</div>
+                </div>
+                <div className="game-detail--section">
+                  <div>Release Date:</div>
+                  <div>{game?.release_date || <Skeleton width={200} />}</div>
+                </div>
                 <Link
                   className="game-details--button"
                   to={game ? game.game_url : "/"}

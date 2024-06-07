@@ -6,23 +6,23 @@ export default function GameRequirements({ game }: { game: GameFull }) {
     <>
       <section className="game-requirements">
         <div className="game-req">
-          <h3>Operating System</h3>
+          <h4>Operating System</h4>
           <div>{game.minimum_system_requirements.os}</div>
         </div>
         <div className="game-req">
-          <h3>Processor</h3>
+          <h4>Processor</h4>
           <div>{game.minimum_system_requirements.processor}</div>
         </div>
         <div className="game-req">
-          <h3>Memory</h3>
+          <h4>Memory</h4>
           <div>{game.minimum_system_requirements.memory}</div>
         </div>
         <div className="game-req">
-          <h3>Graphics</h3>
+          <h4>Graphics</h4>
           <div>{game.minimum_system_requirements.graphics}</div>
         </div>
         <div className="game-req">
-          <h3>Storage</h3>
+          <h4>Storage</h4>
           <div>{game.minimum_system_requirements.storage}</div>
         </div>
       </section>

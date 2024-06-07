@@ -7,6 +7,14 @@
   padding: 20px 0;
 }
 
+.carousel-container {
+  background: radial-gradient(
+    circle at bottom center,
+    var(--feature-bg-clr),
+    rgba(0, 0, 0, 0) 50%
+  );
+}
+
 .game-feature-card {
   display: grid;
   grid-template-columns: 3fr 2fr;

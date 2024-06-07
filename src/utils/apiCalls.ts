@@ -10,12 +10,11 @@ export function getGames(): Promise<Game[]> {
       "X-RapidAPI-Key": "517a7f1c4emsh0b59a6d7601c458p1978d3jsn390bd0aad9cf",
       "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
     },
-  })
-    .then((res) => {
-      if (!res.ok) throw new Error("Could not get games");
-      return res.json();
-    })
-    .catch((err) => console.log(err));
+  }).then((res) => {
+    if (!res.ok)
+      throw new Error("Could not get games from the server. Try again later");
+    return res.json();
+  });
 }
 
 export function getGame(id: string | number | undefined): Promise<GameFull> {
@@ -25,10 +24,8 @@ export function getGame(id: string | number | undefined): Promise<GameFull> {
       "X-RapidAPI-Key": "517a7f1c4emsh0b59a6d7601c458p1978d3jsn390bd0aad9cf",
       "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
     },
-  })
-    .then((res) => {
-      if (!res.ok) throw new Error(`Could not find game with id ${id}`);
-      return res.json();
-    })
-    .catch((err) => console.log(err));
+  }).then((res) => {
+    if (!res.ok) throw new Error(`There is no game with ${id} on the server`);
+    return res.json();
+  });
 }
