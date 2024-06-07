@@ -7,15 +7,19 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "e2e": "cypress open"
   },
   "dependencies": {
     "fuzzysort": "^3.0.1",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-error-boundary": "^4.0.13",
     "react-fast-marquee": "^1.6.4",
+    "react-icons": "^5.2.1",
     "react-infinite-scroll-component": "^6.1.0",
+    "react-loading-skeleton": "^3.4.0",
     "react-multi-carousel": "^2.8.5",
     "react-router": "^6.23.1",
     "react-router-dom": "^6.23.1"
@@ -26,6 +30,7 @@
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "cypress": "^13.11.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.0",

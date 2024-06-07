@@ -18,7 +18,8 @@ export function GameScreenshots({
   return (
     <Carousel
       responsive={responsive}
-      itemClass="image-container carousel-screenshot"
+      infinite={true}
+      itemClass="image-container"
     >
       {screenshots.map((screenshot) => {
         return <img key={screenshot.id} src={screenshot.image} />;

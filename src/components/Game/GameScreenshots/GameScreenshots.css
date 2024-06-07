@@ -1,3 +1,8 @@
 .carousel-screenshot {
   /* height: 500px; */
 }
+
+.screenshot-dots {
+  position: absolute;
+  bottom: -100px;
+}

@@ -1,11 +1,8 @@
 header {
-  background-color: var(--main-clr);
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-}
+  background-color: var(--main-bg-clr);
+  padding: 30px 10px 0px;
 
-.header-links {
-  display: flex;
-  gap: 10px;
+  h1 {
+    margin: 0;
+  }
 }

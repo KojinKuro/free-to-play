@@ -1,6 +1,8 @@
 import Carousel from "react-multi-carousel";
 import { useNavigate } from "react-router";
 import { Game } from "../../../types/interface";
+import GamePlatforms from "../GamePlatforms/GamePlatforms";
+import "./GameDisplay.css";
 
 export default function GameDisplay({ games }: { games: Game[] }) {
   const navigate = useNavigate();
@@ -24,11 +26,20 @@ export default function GameDisplay({ games }: { games: Game[] }) {
   };
 
   return (
-    <Carousel responsive={responsive}>
+    <Carousel
+      responsive={responsive}
+      containerClass="game-display--carousel-container"
+    >
       {games.map((game) => (
-        <div key={game.id} onClick={() => navigate(`/game/${game.id}`)}>
-          <img src={game.thumbnail} alt={game.title} />
-          <div>{game.title}</div>
+        <div
+          className="game-display--item"
+          key={game.id}
+          onClick={() => navigate(`/game/${game.id}`)}
+        >
+          <div className="image-container">
+            <img src={game.thumbnail} alt={game.title} />
+          </div>
+          <GamePlatforms string={game.platform} />
         </div>
       ))}
     </Carousel>

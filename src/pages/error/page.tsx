@@ -1,8 +1,15 @@
-export default function ErrorPage() {
+import ErrorComponent from "../../components/ErrorComponent/ErrorComponent";
+import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
+
+export default function ErrorPage({ error }: { error: Error }) {
   return (
     <>
-      <div>This page does not exist</div>
-      <img src="./vite.svg" alt="vite image" />
+      <Header />
+      <main>
+        <ErrorComponent error={error} />
+      </main>
+      <Footer />
     </>
   );
 }

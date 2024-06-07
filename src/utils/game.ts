@@ -46,9 +46,9 @@ export function calculateCategory(
 ): string[] {
   return games
     .reduce((categoryList, game) => {
-      const currentCategory = String(game[category]);
+      const currentCategory = String(game[category]).trim();
       if (!categoryList.includes(currentCategory)) {
-        categoryList.push(currentCategory.trim());
+        categoryList.push(currentCategory);
       }
       return categoryList;
     }, [] as string[])

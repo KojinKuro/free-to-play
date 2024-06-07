@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { GameContext } from "../../App";
+import { GameContext } from "../../components/App/App";
 import { CategorySelect } from "../../components/CategorySelect/CategorySelect";
 import GameFeature from "../../components/Game/GameFeature/GameFeature";
 import GameFilter from "../../components/Game/GameFilter/GameFilter";

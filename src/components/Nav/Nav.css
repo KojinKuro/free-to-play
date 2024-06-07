@@ -1,0 +1,22 @@
+nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px;
+
+  background-color: var(--main-bg-clr);
+
+  position: sticky;
+  top: 0px;
+  z-index: 2000;
+
+  .nav-tools {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+
+    flex: 1;
+    max-width: 600px;
+  }
+}

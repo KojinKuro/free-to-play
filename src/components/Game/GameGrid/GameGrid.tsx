@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useNavigate } from "react-router";
 import { Game } from "../../../types/interface";
 import "./GameGrid.css";
+import GameGridCard from "./GameGridCard";
 
 export default function GameGrid({ games }: { games: Game[] }) {
-  const [gamesToDisplay, setGamesToDisplay] = useState(games.slice(0, 12));
-  const navigate = useNavigate();
+  const [gamesToDisplay, setGamesToDisplay] = useState(games.slice(0, 24));
 
   useEffect(() => {
     setGamesToDisplay(games.slice(0, 12));
@@ -14,7 +13,7 @@ export default function GameGrid({ games }: { games: Game[] }) {
 
   const getMoreGames = () => {
     setGamesToDisplay((prevGamesToDisplay) =>
-      games.slice(0, prevGamesToDisplay.length + 12)
+      games.slice(0, prevGamesToDisplay.length + 24)
     );
   };
 
@@ -27,14 +26,7 @@ export default function GameGrid({ games }: { games: Game[] }) {
       className="game-grid"
     >
       {gamesToDisplay.map((game) => (
-        <div
-          className="game-grid-card"
-          key={game.id}
-          onClick={() => navigate(`/game/${game.id}`)}
-        >
-          <img src={game.thumbnail} alt={game.title} />
-          <div>{game.title}</div>
-        </div>
+        <GameGridCard key={game.id} game={game} />
       ))}
     </InfiniteScroll>
   );

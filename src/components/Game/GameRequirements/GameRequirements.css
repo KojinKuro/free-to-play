@@ -1,0 +1,22 @@
+.game-requirements {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.game-req {
+  padding: 10px;
+}
+
+.game-req > *:first-child {
+  margin: 0;
+}
+
+.game-req:nth-child(4n + 1),
+.game-req:nth-child(4n + 4) {
+  background-color: var(--bg-clr-light);
+}
+
+.game-req:nth-child(4n + 2),
+.game-req:nth-child(4n + 3) {
+  background-color: var(--bg-clr-lighter);
+}
