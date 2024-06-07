@@ -9,7 +9,11 @@ export function SearchResult({
   children: ReactNode;
 }) {
   return (
-    <div onClick={onClick} className="search-result">
+    <div
+      onClick={onClick}
+      className="search-result"
+      data-test-id="search-result"
+    >
       {children}
     </div>
   );

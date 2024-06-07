@@ -1,0 +1,36 @@
+{
+  "id": 409,
+  "title": "World of Tanks",
+  "thumbnail": "https://placehold.co/365x206?text=World+of+Tanks",
+  "status": "Live",
+  "short_description": "A free-to-play tank MMO with gameplay that is easy to learn but hard to master.",
+  "description": "World of Tanks is a free-to-play tank MMO that features intense team-based combat. Players command a variety of tanks from different eras and nations, each with unique abilities and roles on the battlefield. The game emphasizes strategic gameplay, where coordination and tactics can turn the tide of battle.\r\n\r\nPlayers can choose from a wide range of tanks, including light tanks for scouting, medium tanks for versatile roles, heavy tanks for frontline combat, and tank destroyers and artillery for support. As players progress, they can upgrade their tanks, unlock new ones, and customize their vehicles with various modules and equipment.\r\n\r\nWorld of Tanks also features a variety of game modes, from random battles to team-based missions and clan wars. The game is continuously updated with new content, including tanks, maps, and game mechanics, keeping the experience fresh and engaging for players.",
+  "game_url": "https://www.freetogame.com/open/world-of-tanks",
+  "genre": "Shooter",
+  "platform": "PC (Windows)",
+  "publisher": "Wargaming",
+  "developer": "Wargaming",
+  "release_date": "2011-08-12",
+  "freetogame_profile_url": "https://www.freetogame.com/world-of-tanks",
+  "minimum_system_requirements": {
+    "os": "Windows 7/8/10",
+    "processor": "Intel Core i3 / AMD Ryzen 3",
+    "memory": "4GB",
+    "graphics": "NVIDIA GeForce GT 1030 / AMD Radeon HD 7850",
+    "storage": "36 GB of free space"
+  },
+  "screenshots": [
+    {
+      "id": 90,
+      "image": "https://placehold.co/1920x1080?text=Screenshot+1"
+    },
+    {
+      "id": 91,
+      "image": "https://placehold.co/1920x1080?text=Screenshot+2"
+    },
+    {
+      "id": 92,
+      "image": "https://placehold.co/1920x1080?text=Screenshot+3"
+    }
+  ]
+}

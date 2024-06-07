@@ -33,6 +33,7 @@ export default function GameDisplay({ games }: { games: Game[] }) {
       {games.map((game) => (
         <div
           className="game-display--item"
+          data-test-id="game-display-item"
           key={game.id}
           onClick={() => navigate(`/game/${game.id}`)}
         >

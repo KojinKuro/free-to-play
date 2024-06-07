@@ -55,7 +55,9 @@ export default function RandomGameSection() {
         <h1>F2P👾Database</h1>
         <p>Welcome to F2P (free-to-play) database</p>
         <form className="random-game-form">
-          <button onClick={handleButton}>Get a random game</button>
+          <button onClick={handleButton} data-test-id="main-random-button">
+            Get a random game
+          </button>
           <div>
             <CategorySelect
               category="Genre"
