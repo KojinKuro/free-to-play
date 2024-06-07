@@ -1,10 +1,9 @@
-import { GameFull } from "../../types/interface";
+import { GameFull } from "../../../types/interface";
 import "./GameRequirements.css";
 
 export default function GameRequirements({ game }: { game: GameFull }) {
   return (
     <>
-      <h2>Game Requirements</h2>
       <section className="game-requirements">
         <div className="game-req">
           <h3>Operating System</h3>

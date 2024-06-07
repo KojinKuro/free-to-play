@@ -4,7 +4,7 @@
   display: grid;
   grid-template-columns: 3fr 7fr;
 
-  background-color: var(--main-bg-clr);
+  background-color: var(--card-bg-clr);
   margin-bottom: 20px;
 
   .image-container {
@@ -31,9 +31,8 @@
 
 .game-list--info-details {
   display: flex;
-}
-
-.game-list--genre {
+  align-items: center;
+  gap: 5px;
 }
 
 .game-list--buttons {

@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { GameContext } from "../../components/App/App";
 import GameDisplay from "../../components/Game/GameDisplay/GameDisplay";
-import GameRequirements from "../../components/Game/GameRequirements";
+import GameRequirements from "../../components/Game/GameRequirements/GameRequirements";
 import { GameScreenshots } from "../../components/Game/GameScreenshots/GameScreenshots";
 import { GameFull } from "../../types/interface";
 import { getGame } from "../../utils/apiCalls";
@@ -75,16 +75,22 @@ export default function GamePage() {
           {game && (
             <>
               {game.screenshots.length > 0 && (
-                <GameScreenshots screenshots={game.screenshots} />
+                <section>
+                  <h3>Screenshots</h3>
+                  <GameScreenshots screenshots={game.screenshots} />
+                </section>
               )}
               {game.minimum_system_requirements && (
-                <GameRequirements game={game} />
+                <section>
+                  <h3>Game Requirements</h3>
+                  <GameRequirements game={game} />
+                </section>
               )}
               {getRelevantGames(game, games).length > 0 && (
-                <>
-                  <h1>Games Like {game.title}</h1>
+                <section>
+                  <h3>Games Like {game.title}</h3>
                   <GameDisplay games={getRelevantGames(game, games)} />
-                </>
+                </section>
               )}
             </>
           )}

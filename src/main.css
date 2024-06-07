@@ -1,16 +1,28 @@
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-
+:root {
   --main-bg-clr: rgb(178, 56, 182);
+  --secondary-bg-clr: white;
+  --card-bg-clr: rgb(238, 176, 240);
+  --bg-clr-light: rgba(238, 176, 240, 0.5);
+  --bg-clr-lighter: rgba(253, 197, 255, 0.25);
+
   --max-width: 1200px;
 
   --font-clr: rgb(0, 0, 0);
   --font-light-clr: rgba(0, 0, 0, 0.418);
 
   --shadow-clr: rgb(0, 0, 0);
+}
+
+body {
+  background-color: var(--main-bg-clr);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  background-color: var(--secondary-bg-clr);
 }
 
 main {

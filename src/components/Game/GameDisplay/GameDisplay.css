@@ -1,7 +1,19 @@
 .game-display--item {
-  background-color: var(--main-bg-clr);
+  background-color: var(--card-bg-clr);
   margin: 0px 20px;
   cursor: pointer;
+
+  .image-container {
+    height: 200px;
+  }
+
+  .image-container > img {
+    transition: transform 0.25s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }
 
 .game-display--carousel-container {

@@ -10,10 +10,14 @@
 
   .game-content {
     width: 100%;
-    max-width: 1200px;
+    max-width: var(--max-width);
 
     display: flex;
     flex-direction: column;
+
+    & > * {
+      margin-bottom: 10px;
+    }
   }
 }
 
@@ -21,8 +25,6 @@
   display: grid;
   grid-template-columns: 7fr 3fr;
   gap: 10px;
-
-  padding-bottom: 30px;
 }
 
 .game-details {

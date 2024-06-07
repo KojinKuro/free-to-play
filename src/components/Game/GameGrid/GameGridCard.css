@@ -1,0 +1,23 @@
+.game-grid-card {
+  cursor: pointer;
+  background-color: var(--card-bg-clr);
+}
+
+.game-grid-card--info {
+  height: 60px;
+  padding: 10px;
+}
+
+.game-grid-card--description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.game-grid-card--info-1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}

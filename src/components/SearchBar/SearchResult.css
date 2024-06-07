@@ -3,6 +3,6 @@
   width: 100%;
 
   &:hover {
-    background-color: red;
+    background-color: var(--card-bg-clr);
   }
 }

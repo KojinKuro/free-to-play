@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Game, GameFull } from "../../../types/interface";
+import Badge from "../../Badge/Badge";
 import GamePlatforms from "../GamePlatforms/GamePlatforms";
 import "./GameListCard.css";
 
@@ -19,7 +20,7 @@ export default function GameListCard({
         <h1 className="game-list--title">{game.title}</h1>
         <div className="game-list--info-details">
           <GamePlatforms string={game.platform} />
-          <div className="game-list--genre">{game.genre}</div>
+          <Badge text={game.genre} />
         </div>
         <div>{game.short_description}</div>
       </div>
