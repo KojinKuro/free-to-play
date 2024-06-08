@@ -28,6 +28,7 @@ describe("template spec", () => {
       cy.get("nav").should("have.length", 1);
 
       cy.getTestId("search-bar").should("have.length", 1);
+      // search for first game
       cy.getTestId("search-bar").get("input").type("World");
       cy.getTestId("search-result").should("have.length", 2);
       cy.getTestId("search-bar").get("input").type(" of Tanks");
@@ -35,6 +36,12 @@ describe("template spec", () => {
       cy.getTestId("search-result").first().contains("World of Tanks");
       cy.getTestId("search-result").first().click();
       cy.url().should("include", `${baseUrl}/game/409`);
+      // search for second game
+      cy.getTestId("search-bar").get("input").type("G");
+      cy.getTestId("search-result").should("have.length", 2);
+      cy.getTestId("search-result").first().contains("Genshin Impact");
+      cy.getTestId("search-result").first().click();
+      cy.url().should("include", `${baseUrl}/game/541`);
 
       // random nav button test #1
       cy.getTestId("nav-random-button")
