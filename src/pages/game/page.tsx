@@ -24,7 +24,7 @@ export default function GamePage() {
 
   return (
     <>
-      <div className="image-container game-splash">
+      <div className="image-container game-splash" data-test-id="game-splash">
         {game ? (
           <img
             src={game.screenshots[1]?.image || game.thumbnail}
@@ -36,13 +36,18 @@ export default function GamePage() {
       </div>
       <div className="game-content-container">
         <div className="game-content">
-          <h1>{game?.title || <Skeleton width={500} />}</h1>
+          <h1 data-test-id="game-title">
+            {game?.title || <Skeleton width={500} />}
+          </h1>
           <div className="game-info-container">
-            <div style={{ whiteSpace: "pre-wrap" }}>
+            <div
+              style={{ whiteSpace: "pre-wrap" }}
+              data-test-id="game-description"
+            >
               {game?.description || <Skeleton count={10} />}
             </div>
             <div>
-              <section className="game-details">
+              <section className="game-details" data-test-id="game-details">
                 <div className="game-detail--section">
                   <div>Genre:</div>
                   <div>{game?.genre || <Skeleton width={200} />}</div>
@@ -75,19 +80,19 @@ export default function GamePage() {
           {game && (
             <>
               {game.screenshots.length > 0 && (
-                <section>
+                <section data-test-id="game-screenshots">
                   <h3>Screenshots</h3>
                   <GameScreenshots screenshots={game.screenshots} />
                 </section>
               )}
               {game.minimum_system_requirements && (
-                <section>
+                <section data-test-id="game-requirements">
                   <h3>Game Requirements</h3>
                   <GameRequirements game={game} />
                 </section>
               )}
               {getRelevantGames(game, games).length > 0 && (
-                <section>
+                <section data-test-id="game-relevant">
                   <h3>Games Like {game.title}</h3>
                   <GameDisplay games={getRelevantGames(game, games)} />
                 </section>
