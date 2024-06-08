@@ -22,7 +22,13 @@ export function GameScreenshots({
       itemClass="image-container"
     >
       {screenshots.map((screenshot) => {
-        return <img key={screenshot.id} src={screenshot.image} />;
+        return (
+          <img
+            key={screenshot.id}
+            src={screenshot.image}
+            data-test-id="game-screenshot"
+          />
+        );
       })}
     </Carousel>
   );
