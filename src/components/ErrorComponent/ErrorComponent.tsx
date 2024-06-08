@@ -6,7 +6,7 @@ export default function ErrorComponent({ error }: { error: Error }) {
   const { resetBoundary } = useErrorBoundary();
 
   return (
-    <div className="error-component">
+    <div className="error-component" data-test-id="error-component">
       <h1>{error.name} has occurred!</h1>
       <p>
         {error.name}: {error.message}
