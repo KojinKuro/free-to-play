@@ -7,9 +7,8 @@ export function filterGames(
   value: string
 ): Game[] {
   return games.filter((game) => {
-    const propValue = game[key];
-    if (typeof propValue !== "string") return false;
-    return propValue.toLowerCase().includes(value.toLowerCase());
+    const propValue = String(game[key]);
+    return propValue.toLowerCase() === value.toLowerCase();
   });
 }
 
