@@ -5,3 +5,11 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+@media only screen and (max-width: 700px) {
+  .game-filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

@@ -1,5 +1,6 @@
 nav {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
 
@@ -11,12 +12,26 @@ nav {
   top: 0px;
   z-index: 2000;
 
-  .nav-tools {
-    margin-left: auto;
+  & > * {
     display: flex;
     gap: 10px;
+  }
 
+  .nav-tools {
     flex: 1;
-    max-width: 600px;
+    justify-content: flex-end;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .nav-tools {
+    justify-content: stretch;
   }
 }

@@ -39,8 +39,9 @@
 
 .game-info-container {
   display: grid;
-  grid-template-columns: 7fr 3fr;
+  grid-template-columns: 1fr 350px;
   gap: 10px;
+  padding: 20px;
 }
 
 .game-details {
@@ -74,5 +75,13 @@
     position: absolute;
     bottom: -10px;
     right: 10px;
+  }
+}
+
+@media only screen and (max-width: 830px) {
+  .game-info-container {
+    display: flex;
+    gap: 20px;
+    flex-direction: column-reverse;
   }
 }
