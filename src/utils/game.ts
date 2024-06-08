@@ -9,7 +9,7 @@ export function filterGames(
   return games.filter((game) => {
     const propValue = game[key];
     if (typeof propValue !== "string") return false;
-    return propValue.toLowerCase().includes(value.toLowerCase());
+    return propValue.toLowerCase() === value.toLowerCase();
   });
 }
 
