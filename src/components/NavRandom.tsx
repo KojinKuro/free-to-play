@@ -14,5 +14,9 @@ export default function NavRandom() {
     navigate(`/game/${randomGame.id}`);
   };
 
-  return <button onClick={handleButton}>Random</button>;
+  return (
+    <button onClick={handleButton} data-test-id="nav-random-button">
+      Random
+    </button>
+  );
 }

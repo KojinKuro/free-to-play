@@ -18,6 +18,7 @@ export function CategorySelect({
     <select
       value={categoryInput}
       onChange={(e) => setCategoryInput(e.target.value)}
+      data-test-id="category-select"
       id={id !== "" ? id : undefined}
     >
       <option disabled value="">

@@ -29,7 +29,11 @@ export default function SearchBar() {
     });
 
   return (
-    <form className="search-bar-root" autoComplete="off">
+    <form
+      className="search-bar-root"
+      autoComplete="off"
+      data-test-id="search-bar"
+    >
       <div className="search-bar-container">
         <div className="search-input-container">
           <label htmlFor="search-input">Search Bar</label>

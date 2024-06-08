@@ -12,7 +12,10 @@ export default function GameListCard({
   className?: string;
 }) {
   return (
-    <div className={"game-list-card " + className}>
+    <div
+      className={"game-list-card " + className}
+      data-test-id="game-list-card"
+    >
       <Link to={`/game/${game.id}`} className="image-container">
         <img src={game.thumbnail} alt={game.title} />
       </Link>
@@ -26,10 +29,10 @@ export default function GameListCard({
       </div>
       <div className="game-list--buttons">
         <Link to={`/game/${game.id}`}>
-          <button>More details</button>
+          <button data-test-id="game-list-details-button">More details</button>
         </Link>
         <Link to={game.game_url}>
-          <button>Play Game</button>
+          <button data-test-id="game-list-play-button">Play Game</button>
         </Link>
       </div>
     </div>
