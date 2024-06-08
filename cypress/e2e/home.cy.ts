@@ -23,6 +23,7 @@ describe("template spec", () => {
 
   it("will display generic page elements", () => {
     cy.wait("@allGames").then(() => {
+      // test that components exist and are unique
       cy.get("header").should("have.length", 1);
       cy.get("footer").should("have.length", 1);
       cy.get("nav").should("have.length", 1);
@@ -66,7 +67,9 @@ describe("template spec", () => {
 
   it("should use the random filter button", () => {
     cy.wait("@allGames").then(() => {
+      // test that selections exit
       cy.getTestId("category-select").should("have.length", 2);
+      // test that genres generate
       cy.getTestId("category-select")
         .first()
         .find("option")
@@ -76,6 +79,7 @@ describe("template spec", () => {
           cy.wrap(options).contains("RPG");
           cy.wrap(options).contains("Shooter");
         });
+      // test that platforms generate
       cy.getTestId("category-select")
         .last()
         .find("option")
@@ -84,7 +88,7 @@ describe("template spec", () => {
           cy.wrap(options).contains("PC (Windows)");
           cy.wrap(options).contains("Web Browser");
         });
-
+      // random button game tests
       cy.getTestId("main-random-button")
         .click()
         .url()
