@@ -24,9 +24,7 @@ describe("template spec", () => {
   it("will display generic page elements", () => {
     cy.wait("@allGames").then(() => {
       cy.get("header").should("have.length", 1);
-
       cy.get("footer").should("have.length", 1);
-
       cy.get("nav").should("have.length", 1);
 
       cy.getTestId("search-bar").should("have.length", 1);
@@ -38,6 +36,16 @@ describe("template spec", () => {
       cy.getTestId("search-result").first().click();
       cy.url().should("include", `${baseUrl}/game/409`);
 
+      // random nav button test #1
+      cy.getTestId("nav-random-button")
+        .click()
+        .url()
+        .then((url) => {
+          const gameNumber = url.split("/").at(-1);
+          cy.wrap(url).should("include", `${baseUrl}/game/${gameNumber}`);
+        })
+        .visit("/");
+      // random nav button test #2
       cy.getTestId("nav-random-button")
         .click()
         .url()
@@ -143,6 +151,8 @@ describe("template spec", () => {
 
   it("should display new games", () => {
     cy.getTestId("game-list-card").should("have.length", 5);
+
+    // first newest game
     cy.getTestId("game-list-card")
       .first()
       .then((card) => {
@@ -153,14 +163,60 @@ describe("template spec", () => {
             "include",
             "https://placehold.co/365x206?text=Genshin+Impact"
           );
+        cy.wrap(card).contains("Genshin Impact");
         cy.wrap(card).find("button").should("have.length", 2);
         cy.wrap(card).find("svg").should("have.length", 1);
         cy.wrap(card).contains("RPG");
         cy.wrap(card).contains(
           "An open-world action RPG game set in the fantasy world of Teyvat."
         );
-
-        //game-list-details-button
       });
+
+    cy.getTestId("game-list-card")
+      .first()
+      .findTestId("game-list-details-button")
+      .click()
+      .url()
+      .should("include", `${baseUrl}/game/541`)
+      .visit("/");
+
+    cy.getTestId("game-list-card")
+      .first()
+      .find("a")
+      .last()
+      .should("have.attr", "href")
+      .should("include", "https://www.freetogame.com/open/genshin-impact");
+
+    // last newest game
+    cy.getTestId("game-list-card")
+      .last()
+      .then((card) => {
+        cy.wrap(card)
+          .find("img")
+          .should("have.attr", "src")
+          .should("include", "https://placehold.co/365x206?text=Paladins");
+        cy.wrap(card).contains("Paladins");
+        cy.wrap(card).find("button").should("have.length", 2);
+        cy.wrap(card).find("svg").should("have.length", 1);
+        cy.wrap(card).contains("Shooter");
+        cy.wrap(card).contains(
+          "Join 25+ million players in Paladins, the free-to-play fantasy team-based shooter sensation."
+        );
+      });
+
+    cy.getTestId("game-list-card")
+      .last()
+      .findTestId("game-list-details-button")
+      .click()
+      .url()
+      .should("include", `${baseUrl}/game/365`)
+      .visit("/");
+
+    cy.getTestId("game-list-card")
+      .last()
+      .find("a")
+      .last()
+      .should("have.attr", "href")
+      .should("include", "https://www.freetogame.com/open/paladins");
   });
 });

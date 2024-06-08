@@ -47,6 +47,10 @@ Cypress.Commands.add("getTestId", (testSelector) => {
   return cy.get(`[data-test-id="${testSelector}"]`);
 });
 
-Cypress.Commands.add("findTestId", (testSelector) => {
-  return cy.find(`[data-test-id="${testSelector}"]`);
-});
+Cypress.Commands.add(
+  "findTestId",
+  { prevSubject: true },
+  (subject, testSelector) => {
+    return cy.wrap(subject).find(`[data-test-id="${testSelector}"]`);
+  }
+);
