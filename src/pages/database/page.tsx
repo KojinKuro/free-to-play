@@ -4,19 +4,12 @@ import { CategorySelect } from "../../components/CategorySelect/CategorySelect";
 import GameFeature from "../../components/Game/GameFeature/GameFeature";
 import GameFilter from "../../components/Game/GameFilter/GameFilter";
 import GameGrid from "../../components/Game/GameGrid/GameGrid";
+import { SortBy } from "../../types/enum";
 import {
   filterGames,
   sortGamesByAlphabetic,
   sortGamesByDate,
 } from "../../utils/game";
-
-enum SortBy {
-  TRENDING = "trending",
-  ALPHABETIC = "alphabetic",
-  ALPHABETIC_REVERSE = "alphabetic_reverse",
-  OLDEST = "release",
-  NEWEST = "release_reverse",
-}
 
 export default function DataPage() {
   const { games, genres, platforms } = useContext(GameContext);
