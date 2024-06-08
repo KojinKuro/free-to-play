@@ -25,6 +25,7 @@ export default function GameFeature({ games }: { games: Game[] }) {
       {games.map((game) => (
         <div
           className="game-feature-card"
+          data-test-id="game-feature-card"
           key={game.id}
           onClick={() => navigate(`/game/${game.id}`)}
         >

@@ -10,6 +10,7 @@ export default function GameGridCard({ game }: { game: Game }) {
   return (
     <div
       className="game-grid-card hover-zoom"
+      data-test-id="game-grid-card"
       onClick={() => navigate(`/game/${game.id}`)}
     >
       <div className="image-container">
